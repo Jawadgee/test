@@ -17,7 +17,8 @@ class HomePage extends React.Component{
         const errors = this.validate(this.state.data);
         this.setState({ errors });
         if(Object.keys(errors).length === 0){
-            this.props.submit(this.state.data);
+            this.props.submit(this.state.data)
+                .catch(err => this.setState({errors: err.response.data.errors}));
         }
     }
     validate = (data) => {
@@ -33,6 +34,7 @@ class HomePage extends React.Component{
         return(
             <div>
                 <form onSubmit={this.onSubmit}>
+                    {errors.global && (<p style={{color: 'red'}}>nooooo {errors.global}</p>)}
                     <p>
                         <input
                         type="email"
