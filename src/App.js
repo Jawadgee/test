@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import HomePage from './componets/HomePage';
 import LoginPage from './componets/LoginPage';
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -14,5 +14,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
