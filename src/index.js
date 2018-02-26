@@ -18,6 +18,6 @@ render(
             <App/>
         </Provider>
     </Router>
-    ,document.getElementById('root'));
+    ,document.getElementById('app-root'));
 
 registerServiceWorker();
